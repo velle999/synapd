@@ -1,0 +1,25 @@
+pkgbase = synapd
+	pkgdesc = SynapseOS AI inference daemon — persistent llama.cpp backend
+	pkgver = 0.1.0
+	pkgrel = 49
+	url = https://github.com/velle999/SYNAPSE
+	install = synapd.install
+	arch = x86_64
+	license = GPL-2.0-or-later
+	makedepends = meson
+	makedepends = ninja
+	makedepends = gcc
+	makedepends = pkg-config
+	depends = glibc
+	depends = systemd-libs
+	depends = gcc-libs
+	depends = libgomp
+	depends = synapse-llama
+	depends = json-c
+	optdepends = ggml-cuda: GPU offload on NVIDIA, with synapse-llama-system
+	optdepends = ggml-vulkan: GPU offload on AMD and Intel, with synapse-llama-system
+	backup = etc/synapd/synapd.conf
+	source = synapd-0.1.0.tar.gz::https://github.com/velle999/synapd/releases/download/0.1.0-49/synapd-0.1.0.tar.gz
+	sha256sums = SKIP
+
+pkgname = synapd
