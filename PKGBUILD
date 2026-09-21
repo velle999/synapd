@@ -236,3 +236,9 @@ package() {
     install -Dm644 tmpfiles/synapd.conf \
         "$pkgdir/usr/lib/tmpfiles.d/synapd.conf"
 }
+
+# Added by packaging/git-export.sh: the tarball is signed with the SynapseOS
+# update key, and makepkg refuses it unless the signature is good.
+source+=("$pkgname-$pkgver.tar.gz.sig::https://github.com/velle999/$pkgname/releases/download/$pkgver-$pkgrel/$pkgname-$pkgver.tar.gz.sig")
+sha256sums+=('SKIP')
+validpgpkeys=('648B4C32942C79B20E8AC3F49CECEBCDF48037C1')  # SynapseOS Update Signing <updates@soslinux.org>
